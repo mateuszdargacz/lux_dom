@@ -1,76 +1,253 @@
-<!DOCTYPE html>
 {% load static %}
 {% load compress %}
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>{% block title %}{% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Le styles -->
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!-- This file store project specific CSS -->
+    <title>Luksusowe osiedle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="keywords"
+          content="domy, luzino"/>
+    <meta name="description" content="Tanie domy, luksusowe osiedle"/>
+    <meta name="author" content="Mateusz Dargacz"/>
     {% compress css %}
-        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-        <link href="{% static 'css/project_name.css' %}" rel="stylesheet">
-        {% block extra-css %}{% endblock %}
+        <link rel="shortcut icon" href="{% static 'images/faicon.png' %}"/>
+        <!-- styles Bootsrap -->
+        <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
+        <link href="{% static 'bootstrap/css/bootstrap-responsive.min.css' %}" rel="stylesheet"/>
+        <!-- end styles Bootsrap -->
+        <!-- FONTAWESOME STYLE -->
+        <link rel="stylesheet" href="{% static 'css/font/FortAwesome/css/font-awesome.css' %}"/>
+        <!--[if IE 7]>
+        <link rel="stylesheet" href="{% static 'css/font/FortAwesome/css/font-awesome-ie7.min.css' %}">
+        <![endif]-->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <!-- Style Lightbox -->
+        <link rel="stylesheet" href="{% static 'css/light_box/magnific-popup.css' %}"/>
+        <!-- End Style Lightbox -->
+
+        <!-- Style Full Calendar-->
+        <link href="{% static 'css/fullcalendar/fullcalendar.css' %}" rel="stylesheet"/>
+        <!-- Style Datatatbles-->
+        <link href="{% static 'css/datatables/css/jquery.dataTables.css' %}" rel="stylesheet"/>
+
+        <!-- styles Lobster Theme -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+        <link href="{% static 'css/color_theme.css' %}" rel="stylesheet"/>
+        <!-- place for your custom styles -->
+        <link href="{% static 'css/mystyle.css' %}" rel="stylesheet"/>
+        <!-- End Lobster Theme -->
+        {% block extra_css %}{% endblock %}
     {% endcompress %}
-    {% block extra_css %}{% endblock %}
+
 </head>
+<body class="theme_default">
+<div id="wrapper">
+    {% include "includes/top_nav.html" %}
+    <!-- Start section content Top -->
+    <section id="content_top">
+        <!-- STart sequence Slider  -->
+        <div id="sequence">
+            <a href="#" class="sequence-prev">Prev</a>
+            <a href="#" class="sequence-next">Next</a>
+            <ul class="sequence-canvas unstyled">
+                <li class="animate-in ">
+                    <div class="start_anime">
+                        <img src="{% static 'images/demo_interior/1.jpg' %}" class="bg_slider" alt="preview"/>
 
-<body>
+                        <div class="box_area_slider">
+                            <div class="panel">
+                                <h2 class="title">Welcome to
+                                    <small><strong>Lobster</strong> Hotel</small>
+                                </h2>
+                                <div class="description">
+                                    <p>Sed ut quam at magna porttitor hendrerit. Maecenas quis erat fringilla augue
+                                        feugiat vulputate a eu sem. Pellentesque molestie lacus. Morbi sed justo at erat
+                                        sollicitudin placerat mollis sed massaerat sollicitudin placerat mollis.Sed ut
+                                        quam at magna porttitor hendrerit. Maecenas quis erat fringilla augue feugiat
+                                        vulputate a eu sem.</p>
+                                </div>
+{#                                <img src="{% static 'images/demo_interior/2.jpg' %}" class="img_sllider"#}
+{#                                     alt="preview">#}
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="start_anime">
+                        <img src="{% static 'images/demo_interior/2.jpg' %}" class="bg_slider" alt="preview"/>
 
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">{{ project_name }}</a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                        <div class="box_area_slider">
+                            <div class="panel">
+                                <h2 class="title">Why Are
+                                    <small>the <strong>Best</strong>?</small>
+                                </h2>
+                                <div class="description">
+                                    <ul>
+                                        <li>Best Place For Holiday</li>
+                                        <li>Profesional Chef of Our Restorutant</li>
+                                        <li>Many Interest Events</li>
+                                        <li>Really Great Price for You</li>
+                                        <li>Our Statisfation is our Vision</li>
+                                    </ul>
+                                </div>
+{#                                <img src="{% static 'images/demo_interior/4.jpg' %}" class="img_sllider"#}
+{#                                     alt="preview">#}
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="start_anime">
+                        <img src="{% static 'images/demo_interior/3.jpg' %}" class="bg_slider" alt="preview"/>
+
+                        <div class="box_area_slider">
+                            <div class="panel">
+                                <h2 class="title">Why Are
+                                    <small>the <strong>Best</strong>?</small>
+                                </h2>
+                                <div class="description">
+                                    <ul>
+                                        <li>Best Place For Holiday</li>
+                                        <li>Profesional Chef of Our Restorutant</li>
+                                        <li>Many Interest Events</li>
+                                        <li>Really Great Price for You</li>
+                                        <li>Our Statisfation is our Vision</li>
+                                    </ul>
+                                </div>
+                                {#                                <img src="{% static 'images/demo_interior/4.jpg' %}" class="img_sllider"#}
+                                {#                                     alt="preview">#}
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
-        <!--/.nav-collapse -->
-    </div>
-</div>
-
-<div class="container">
-
-    <h1>{% block page_title %} {% endblock %} TITLE</h1>
-
+        <!-- End sequence Slider  -->
+    </section>
     {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
-        <a href="{% url 'test_app:main' %}">
-            <button class="btn btn-primary">
-                Navigate to TEST_APP
-            </button>
-        </a>
+
     {% endblock %}
+    <!--Start Footer Section-->
+    <footer id="footer">
+        <div class="inner-wrapper driver_space"></div>
+        <div class="inner-wrapper content">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span5">
+                    <h3><span class="font_hotel">Informacje</span></h3>
 
+                    <p>Phasellus fringilla suscipit risus nec eleifend. </p>
+                    <!--Start List Contact Info-->
+                    <ul class="unstyled contact_info">
+                        <li class="location">12345 / Some Street<br>Portland, USA</li>
+                        <li class="phone">phone: +1 (44) 123-45-67<br>fax: +1 (44) 123-45-63</li>
+                        <li class="skype"><a href="skype:echo123?call">Skype Me</a></li>
+                    </ul>
+                    <!--End List Contact Info-->
+                    <h3>Stay Connect <span class="font_hotel"> Socials</span></h3>
+                    <!--Start List Links Social Network-->
+                    <div class="link_socials">
+                        <a href="#"><img src="{% static 'images/icons/facebook.png' %}" alt="network"/></a>
+                        <a href="#"><img src="{% static 'images/icons/twitter.png' %}" alt="network"/></a>
+                        <a href="#"><img src="{% static 'images/icons/google-plus.png' %}" alt="network"/></a>
+                        <a href="#"><img src="{% static 'images/icons/vimeo.png' %}" alt="network"/></a>
+                        <a href="#"><img src="{% static 'images/icons/youtube.png' %}" alt="network"/></a>
+                    </div>
+                    <!--End List Links Social Network-->
+                </div>
+                <div class="span1"></div>
+
+                <div class="span5">
+                    <h3><span class="font_hotel">Galeria</span></h3>
+                    <!--Start List Grid Galeries img-->
+                    <div class="gridmasonry galeries_footer">
+                        <div class="item_grid item3">
+                            <a href="{% static 'images/icons/youtube.png' %}" title="Image Title">
+                                <div class="hover"></div>
+                                <img src="{% static 'images/icons/youtube.png' %}" alt="img_preview"></a>
+                        </div>
+                    </div>
+                    <!--End List Grid Galeries img-->
+                </div>
+            </div>
+        </div>
+        <!--Start Footer Bottom-->
+        <div class="footer_bottom">
+            <div class="inner-wrapper">
+                <div class="row-fluid ">
+                    <div class="span3"><p class="font_hotel">Luksusowe domy Luzino</p></div>
+                    <div class="span6 text_right"><p>Copyright &copy; 2015 mateuszdargacz@gmail.com. All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Footer Bottom-->
+        <!--Start Arrow Back To TOP Page-->
+        <div id="back_to_top">
+            <a href="#wrapper" class="localScroll btn flat btn-inverse hidden-phone">
+                <i class="icon-3x icon-angle-up"></i>
+            </a>
+        </div>
+        <!--End Arrow Back To TOP Page-->
+    </footer>
+    <!--End Footer Section-->
+    <!-- Start Control Color Theme -->
+    <!-- End Control Color Theme -->
 </div>
-<!-- /container -->
 
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+
 {% compress js %}
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <!-- place project specific Javascript in this file -->
-    <script src="{% static 'js/project_name.js' %}"></script>
+
+    <!--=========================================================================-->
+    <!--Load JS source-->
+    <!--=========================================================================-->
+    <!--Load JS JQUERY-->
+    <script src="{% static 'js/jquery-1.9.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui-1.10.2.custom.min.js' %}"></script>
+
+    <!--Load JS Bootstrap-->
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--=========================================================================-->
+    <!--Load JS plugins-->
+    <!--=========================================================================-->
+    <!--End JS Grid masonry-->
+    <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+    <!--End JS Grid slider sequence-->
+    <script src="{% static 'js/jquery.sequence-min.js' %}"></script>
+
+    <!--Load JS scrool smoothest-->
+    <script src="{% static 'js/jquery.scrollTo-1.4.3.1-min.js' %}"></script>
+    <script src="{% static 'js/jquery.localScroll.min.js' %}"></script>
+    <!--End JS scrool smoothest-->
+
+    <!--Load JS Datatables plugin-->
+    <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+    <!--Load JS fullcalendar plugin-->
+    <script src="{% static 'js/fullcalendar.min.js' %}"></script>
+    <!--Load JS magnific lightbox plugin-->
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <!--Load JS lazy load image unveil-->
+    <script src="{% static 'js/jquery.unveil.min.js' %}"></script>
+    <!--Load JS jquery validation -->
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+
+    <!--Load JS jquery shintact remove it if unnecessary-->
+    <link href="{% static 'assets/shi_default.min.css' %}" rel="stylesheet"/>
+    <script src="{% static 'assets/shi_jquery.min.js' %}"></script>
+    <!-- end Load JS plugins-->
+
+    <!--load js cookie #[optional]-->
+    <script src="{% static 'js/jquery.cookie.js' %}"></script>
+    <!--end load js cookie-->
+
+    <!--Load JS config application-->
+    <script src="{% static 'js/app.js' %}"></script>
+    <!--end JS config application-->
     {% block extra_js %} {% endblock %}
 {% endcompress %}
-
 </body>
+
 </html>

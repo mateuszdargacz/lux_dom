@@ -6,12 +6,14 @@ __git__ = 'https://github.com/mateuszdargacz'
 
 from django.conf.urls import patterns, include, url
 from django.conf import settings
-from django.views.generic import TemplateView
 
-urlpatterns = patterns('apps.core.views',
     # Examples:
-    url(r'^main/?$', TemplateView.as_view(template_name="core/main.html"), name='main'),
-    # url(r'^{{ project_name }}/', include('{{ project_name }}.foo.urls')),
+urlpatterns = patterns('apps.core.views',
+    url(r'^/?$', 'main', name='main'),
+    url(r'^hood/?$', 'hood', name='hood'),
+    url(r'^houses/?$', 'houses', name='houses'),
+    url(r'^gallery/?$', 'gallery', name='gallery'),
+    url(r'^contact/?$', 'contact', name='contact'),
 )
 
 # Uncomment the next line to serve media files in dev.

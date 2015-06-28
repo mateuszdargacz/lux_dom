@@ -7,8 +7,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', TemplateView.as_view(template_name='base.html')),
-    url(r'^test_app/', include('apps.core.urls', namespace="test_app")),
+    url(r'^', include('apps.core.urls', namespace="core")),
     url(r'^admin/', include(admin.site.urls)),
 )
 
@@ -17,6 +16,4 @@ urlpatterns = patterns('',
 
 if settings.DEBUG:
     import debug_toolbar
-    urlpatterns += patterns('',
-                            url(r'^__debug__/', include(debug_toolbar.urls)),
-                            )
+    urlpatterns += patterns('', url(r'^__debug__/', include(debug_toolbar.urls)),)

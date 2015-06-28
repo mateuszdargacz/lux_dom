@@ -96,6 +96,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     normpath(join(SITE_ROOT, 'static')),
 )
+print STATICFILES_DIRS
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (

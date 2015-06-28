@@ -1,5 +1,159 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<h2>located at project_name/test_app/main.html</h2>
+    <section id="logo_message_area">
+        <div class="inner-wrapper">
+            <!-- Start logo image -->
+            <h1 class="no_margin logo"><strong>Luksusowe</strong>
+                <small>Osiedle</small>
+            </h1>
+            <!-- End logo image -->
+            <!-- Start Message Your own -->
+            <div class="row-fluid">
+                <div class="span8">
+                    <p class="no_margin"> Jeśli szukasz taniego domu z odrobiną luksusu bla bla</p>
+                </div>
+                {#                <div class="span4 text_right">#}
+                {#                    <a class="btn btn-primary flat"><i class=" icon-shopping-cart"></i> Buy This Template</a>#}
+                {#                </div>#}
+            </div>
+            <!-- End Message Your own -->
+        </div>
+        <div class="inner-wrapper driver_space"></div>
+    </section>
+    <!-- End section logo message area -->
+    <!-- Start section content page -->
+    <section id="content">
+        <div class="inner-wrapper">
+            <!-- Begin Content Page -->
+            <div class="row-fluid">
+                <div class="span12">
+                    <!-- Start Grid Promotion-->
+                    <div class="gridmasonry promoted_grid">
+                        <div class="item_grid item3">
+                            <a href="#" class="promoted">
+                                <img src="{% static 'images/interior/5388662544_9e6441ee70.jpg' %}" alt="img_preview">
+
+                                <div class="desc_promo bottom">
+                                    <div class="panel">
+                                        <h4>Get 30% Promotion</h4>
+                                        <h4>VIP Room</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item_grid item3">
+                            <a href="#" class="promoted">
+                                <img src="{% static 'images/interior/5388055503_bdfec0a3d5.jpg' %}" alt="img_preview">
+
+                                <div class="desc_promo top">
+                                    <div class="panel">
+                                        <h4>Get Weekend Pakage</h4>
+                                        <h4>Romantic Room</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item_grid item3">
+                            <a href="#" class="promoted">
+                                <img src="{% static 'images/interior/5388661724_e92356d456.jpg' %}" alt="img_preview">
+
+                                <div class="desc_promo bottom">
+                                    <div class="panel">
+                                        <h4>Get Another Promotion</h4>
+                                        <h4>Description</h4>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End  Grid Promotion-->
+
+                    <!-- Start Break Page Style-->
+                    <div class="divater">
+                        <div class="line"></div>
+                        <span><img src="{% static 'images/deviter.png' %}" alt=""></span></div>
+                    <!-- End Break Page Style-->
+
+                    <div class="text_center">
+                        <h1>Welcome to Our Hotel</h1>
+
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing software like Aldus PageMaker including
+                            versions of Lorem Ipsum.</p>
+                    </div>
+                    <!-- Start Break Page Style-->
+                    <div class="divater">
+                        <div class="line"></div>
+                        <span><img src="{% static 'images/deviter.png' %}" alt=""></span></div>
+                    <!-- End Break Page Style-->
+
+                    <!-- Start Grid Top Featires-->
+                    <div class="row-fluid">
+                        <div class="span4 text_center">
+                            <div class="boxfeature">
+                                <div class="img_preview">
+                                    <img src="{% static 'images/dot.png' %}"
+                                         data-src="{% static 'images/morguefile/file9401274960472.jpg' %}"
+                                         alt="img_preview"/>
+                                    <h4>Best Restaurant</h4>
+                                </div>
+                                <div class="desc">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+
+                                    <p><a class="btn btn-primary flat btn-large">Read More</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span4 text_center">
+                            <div class="boxfeature">
+                                <div class="img_preview">
+                                    <img src="{% static 'images/dot.png' %}"
+                                         data-src="{% static 'images/morguefile/box_feature.jpg' %}" alt="img_preview"/>
+                                    <h4>Spa Services</h4>
+                                </div>
+                                <div class="desc">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+
+                                    <p><a class="btn btn-primary  flat btn-large">Read More</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span4 text_center">
+                            <div class="boxfeature">
+                                <div class="img_preview">
+                                    <img src="{% static 'images/dot.png' %}"
+                                         data-src="{% static 'images/morguefile/box_feature2.jpg' %}"
+                                         alt="img_preview"/>
+                                    <h4>Amazing View</h4>
+                                </div>
+                                <div class="desc">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+
+                                    <p><a class="btn btn-primary  flat btn-large">Read More</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Grid Top Featires-->
+
+                    <!-- Start Break Page Style-->
+                    <div class="divater">
+                        <div class="line"></div>
+                        <span><img src="{% static 'images/deviter.png' %}" alt=""></span></div>
+                    <!-- End Break Page Style-->
+
+                </div>
+            </div>
+            <!-- End Content Page -->
+        </div>
+    </section>
 {% endblock %}

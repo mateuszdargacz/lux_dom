@@ -234,7 +234,6 @@ Start Content TOP
 #content_top #sequence > .sequence-canvas li > * {
   position: absolute;
   /* only cause the left and opacity properties to transition */
-
 }
 #content_top #sequence .sequence-next,
 #content_top #sequence .sequence-prev {
@@ -1711,9 +1710,6 @@ select {
   position: relative;
 }
 /* Large desktop */
-@media (min-width: 1200px) {
-  
-}
 @media (min-width: 979px) {
   .togle_menu_mobile {
     color: white !important;
@@ -1787,9 +1783,6 @@ select {
   }
 }
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
-  
-}
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   #content .video-container iframe {
@@ -1873,7 +1866,7 @@ select {
     display: none !important;
     height: 0 !important;
     overflow: hidden !important:
-        visibility: hidden !important;
+      visibility: hidden !important;
   }
   #footer .footer_bottom p {
     text-align: left;

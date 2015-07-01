@@ -8,11 +8,12 @@
         </div>
         <nav class="main_navbar collapse">
             <ul class="unstyled">
-                <li class="active"><a href="{% url 'core:main' %}">Strona Główna</a></li>
-                <li><a href="{% url 'core:houses' %}">o domach</a></li>
-                <li><a href="{% url 'core:gallery' %}">Galeria</a></li>
-                <li><a href="{% url 'core:contact' %}">Kontakt</a></li>
-                <li><a href="{% url 'core:hood' %}">O osiedlu</a></li>
+
+                <li {% if active == 'main' %}class="active"{% endif %}><a href="{% url 'core:main' %}">Strona Główna</a></li>
+                <li {% if active == 'houses' %}class="active"{% endif %}><a href="{% url 'core:houses' %}">o domach</a></li>
+                <li {% if active == 'hood' %}class="active"{% endif %}><a href="{% url 'core:hood' %}">O osiedlu</a></li>
+                <li {% if active == 'gallery' %}class="active"{% endif %}><a href="{% url 'core:gallery' %}">Galeria</a></li>
+                <li {% if active == 'contact' %}class="active"{% endif %}><a href="{% url 'core:contact' %}">Kontakt</a></li>
 {#                <li class="dropdown">#}
 {#                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>#}
 {#                    <ul class="dropdown-menu">#}

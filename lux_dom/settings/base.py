@@ -247,7 +247,6 @@ CACHES = {
 }
 ########## COMPRESSOR CONFIGURATIONś
 COMPRESS_ROOT = join(STATIC_ROOT, 'CACHE')
-COMPRESS_OUTPUT_DIR = 'CACHE'
 COMPRESS_PRECOMPILERS = (
     ('text/less', 'lessc {infile}'),
 )

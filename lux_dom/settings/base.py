@@ -241,11 +241,12 @@ LOGGING = {
 ########## END LOGGING CONFIGURATION
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
     }
 }
 ########## COMPRESSOR CONFIGURATION
 COMPRESS_ROOT = join(STATIC_ROOT, 'cache')
+COMPRESS_OUTPUT_DIR = 'cache'
 COMPRESS_PRECOMPILERS = (
     ('text/less', 'lessc {infile}'),
 )

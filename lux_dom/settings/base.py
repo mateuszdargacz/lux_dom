@@ -244,9 +244,9 @@ CACHES = {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
     }
 }
-########## COMPRESSOR CONFIGURATION
-COMPRESS_ROOT = join(STATIC_ROOT, 'cache')
-COMPRESS_OUTPUT_DIR = 'cache'
+########## COMPRESSOR CONFIGURATIONś
+COMPRESS_ROOT = join(STATIC_ROOT, 'CACHE')
+COMPRESS_OUTPUT_DIR = 'CACHE'
 COMPRESS_PRECOMPILERS = (
     ('text/less', 'lessc {infile}'),
 )

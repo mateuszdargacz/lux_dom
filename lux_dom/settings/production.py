@@ -5,7 +5,7 @@ from __future__ import absolute_import
 from os import environ
 
 from .base import *
-
+from django.conf import settings
 # Normally you should not import ANYTHING from Django directly
 # into your settings, but ImproperlyConfigured is an exception.
 from django.core.exceptions import ImproperlyConfigured
@@ -66,11 +66,7 @@ DATABASES = {
 
 ########## CACHE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#caches
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-    }
-}
+
 ########## END CACHE CONFIGURATION
 
 

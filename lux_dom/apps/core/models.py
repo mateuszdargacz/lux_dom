@@ -18,12 +18,17 @@ class HouseType(models.Model):
 class HouseDraft(models.Model):
     name = models.CharField(_('Nazwa'), max_length=128)
     desc = models.TextField(_('Opis'))
-    # Image = models.ImageField(_('Zdjęcie'), upload_to='pics/')
     house_type = models.ForeignKey('HouseType', verbose_name=_('Dom'))
 
 class CImage(models.Model):
     caption = models.CharField(_('podpis zdjecia'), max_length=56)
     description = models.TextField(_('podpis zdjecia'))
-    # image = models.ImageField(_('Plik zdjęcia'), upload_to='pics/')
+    image = models.ImageField(_('Plik zdjęcia'), upload_to='pics/')
     house_type = models.ForeignKey('HouseType', verbose_name=_('Dom'))
+
+class GalleryImage(models.Model):
+    caption = models.CharField(_('podpis zdjecia'), max_length=56)
+    description = models.TextField(_('podpis zdjecia'))
+    image = models.ImageField(_('Plik zdjęcia'), upload_to='pics/')
+
 

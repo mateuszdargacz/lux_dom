@@ -2,89 +2,41 @@
 {% load static %}
 
 {% block content %}
-    <section id="logo_message_area">
-        <div class="inner-wrapper">
-            <h1 class="no_margin logo"><strong>Luksusowe</strong>
-                <small>Osiedle</small>
-            </h1>
-            <div class="row-fluid">
-                <div class="span8">
-                    <p class="no_margin"> Nasza galeria</p>
-                </div>
+<section id="logo_message_area">
+    <div class="inner-wrapper">
+        <h1 class="no_margin logo"><strong>Luksusowe</strong>
+            <small>Osiedle</small>
+        </h1>
+        <div class="row-fluid">
+            <div class="span8">
+                <p class="no_margin"> Nasza galeria</p>
             </div>
         </div>
-        <div class="inner-wrapper driver_space"></div>
-    </section>
-    <section id="content">
-        <div class="inner-wrapper">
-            <div class="row-fluid">
-                <div class="span12">
-                    <!-- Start Grid Galeries -->
-                    <div class="gridmasonry grid_list_galeries">
+    </div>
+    <div class="inner-wrapper driver_space"></div>
+</section>
+<section id="content">
+    <div class="inner-wrapper">
+        <div class="row-fluid">
+            <div class="span12">
+                <!-- Start Grid Galeries -->
+                <div class="gridmasonry grid_list_galeries">
+                    {% for image in gallery_images %}
                         <div class="item_grid item3">
-                            <a href="{% static "images/morguefile/food1.jpg" %}" class="image_link">
+                            <a href="{{ image.image.url }}" class="image_link">
                                 <div class="panel">
-                                    <h2>Food</h2>
+                                    <h2>{{ image.caption }}</h2>
 
                                     <div class="with_hover"></div>
-                                    <img src="{% static "images/morguefile/food1.jpg" %}" alt="preview"/>
+                                    <img src="{{ image.image.url }}" alt="preview"/>
                                 </div>
                             </a>
                         </div>
-                        <div class="item_grid item3">
-                            <a href="{% static "images/morguefile/box_feature2.jpg" %}" class="image_link">
-                                <div class="panel">
-                                    <h2>Title2</h2>
-
-                                    <div class="with_hover"></div>
-                                    <img src="{% static "images/morguefile/box_feature2.jpg" %}" alt="preview"/>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="item_grid item3">
-                            <a href="{% static "images/morguefile/food2.jpg" %}" class="image_link">
-                                <div class="panel">
-                                    <h2>Title3</h2>
-
-                                    <div class="with_hover"></div>
-                                    <img src="{% static "images/morguefile/food2.jpg" %}" alt="preview"/>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="item_grid item3">
-                            <a href="{% static "images/morguefile/file9401274960472.jpg" %}" class="image_link">
-                                <div class="panel">
-                                    <h2>Title4</h2>
-
-                                    <div class="with_hover"></div>
-                                    <img src="{% static "images/morguefile/file9401274960472.jpg" %}" alt="preview"/>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="item_grid item3">
-                            <a href="{% static "images/morguefile/box_feature.jpg" %}" class="image_link">
-                                <div class="panel">
-                                    <h2>Title5</h2>
-
-                                    <div class="with_hover"></div>
-                                    <img src="{% static "images/morguefile/box_feature.jpg" %}" alt="preview"/>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="item_grid item3">
-                            <a href="{% static "images/morguefile/spa1.jpg" %}" class="image_link">
-                                <div class="panel">
-                                    <h2>Title6</h2>
-
-                                    <div class="with_hover"></div>
-                                    <img src="{% static "images/morguefile/spa1.jpg" %}" alt="preview"/>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- End Grid Galeries -->
+                    {% endfor %}
                 </div>
+                <!-- End Grid Galeries -->
             </div>
         </div>
-    </section><!-- End section logo message area -->
+    </div>
+</section><!-- End section logo message area -->
 {% endblock %}

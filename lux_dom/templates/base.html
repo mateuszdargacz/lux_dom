@@ -53,24 +53,33 @@
             <a href="#" class="sequence-prev">Prev</a>
             <a href="#" class="sequence-next">Next</a>
             <ul class="sequence-canvas unstyled">
+                <li>
+                    <div class="start_anime">
+                        <img src="{% static 'images/demo_interior/3.jpg' %}" class="bg_slider" alt="preview"/>
+
+                        <div class="box_area_slider">
+                            <div class="panel">
+                                <h2 class="title">Gratis! <br/>
+                                    <small><strong>10 m<sup>2</sup></strong> Balkonu</small>
+                                    <small><strong>35 m<sup>2</sup></strong> Strychu</small>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
                 <li class="animate-in ">
                     <div class="start_anime">
                         <img src="{% static 'images/demo_interior/1.jpg' %}" class="bg_slider" alt="preview"/>
 
                         <div class="box_area_slider">
                             <div class="panel">
-                                <h2 class="title">Welcome to
-                                    <small><strong>Lobster</strong> Hotel</small>
+                                <h2 class="title">Promocja kredytu!
+                                    <small><strong> "Własny kąt"</strong></small>
+                                    <small>oprocentowanie od <strong> 3,9%</strong></small>
                                 </h2>
-                                <div class="description">
-                                    <p>Sed ut quam at magna porttitor hendrerit. Maecenas quis erat fringilla augue
-                                        feugiat vulputate a eu sem. Pellentesque molestie lacus. Morbi sed justo at erat
-                                        sollicitudin placerat mollis sed massaerat sollicitudin placerat mollis.Sed ut
-                                        quam at magna porttitor hendrerit. Maecenas quis erat fringilla augue feugiat
-                                        vulputate a eu sem.</p>
-                                </div>
-{#                                <img src="{% static 'images/demo_interior/2.jpg' %}" class="img_sllider"#}
-{#                                     alt="preview">#}
+                                {#                                <img src="{% static 'images/demo_interior/2.jpg' %}" class="img_sllider"#}
+                                {#                                     alt="preview">#}
                             </div>
                         </div>
                     </div>
@@ -81,41 +90,15 @@
 
                         <div class="box_area_slider">
                             <div class="panel">
-                                <h2 class="title">Why Are
-                                    <small>the <strong>Best</strong>?</small>
+                                <h2 class="title">Zapraszamy do
+                                    <small>poznania<strong> Naszej</strong> oferty</small>
                                 </h2>
                                 <div class="description">
-                                    <ul>
-                                        <li>Best Place For Holiday</li>
-                                        <li>Profesional Chef of Our Restorutant</li>
-                                        <li>Many Interest Events</li>
-                                        <li>Really Great Price for You</li>
-                                        <li>Our Statisfation is our Vision</li>
-                                    </ul>
-                                </div>
-{#                                <img src="{% static 'images/demo_interior/4.jpg' %}" class="img_sllider"#}
-{#                                     alt="preview">#}
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="start_anime">
-                        <img src="{% static 'images/demo_interior/3.jpg' %}" class="bg_slider" alt="preview"/>
-
-                        <div class="box_area_slider">
-                            <div class="panel">
-                                <h2 class="title">Why Are
-                                    <small>the <strong>Best</strong>?</small>
-                                </h2>
-                                <div class="description">
-                                    <ul>
-                                        <li>Best Place For Holiday</li>
-                                        <li>Profesional Chef of Our Restorutant</li>
-                                        <li>Many Interest Events</li>
-                                        <li>Really Great Price for You</li>
-                                        <li>Our Statisfation is our Vision</li>
-                                    </ul>
+                                    <p>
+                                        Domy w zabudowie szeregowej położone są w malowniczej części miejscowości Luzino
+                                        8km od Wejherowa, 35km od Gdyni. Wielkość działek od 560m2 do 750m2. Cena za
+                                        metr kwadratowy łącznie z działką.
+                                    </p>
                                 </div>
                                 {#                                <img src="{% static 'images/demo_interior/4.jpg' %}" class="img_sllider"#}
                                 {#                                     alt="preview">#}
@@ -153,12 +136,14 @@
                     <h3><span class="font_hotel">Galeria</span></h3>
                     <!--Start List Grid Galeries img-->
                     <div class="gridmasonry galeries_footer">
-                        <div class="item_grid item3">
-                            <a href="{% static 'images/icons/youtube.png' %}" title="Image Title">
-                                <div class="hover"></div>
-                                <img src="{% static 'images/icons/youtube.png' %}" alt="img_preview"></a>
+                    {% for image in gallery_images %}
+                            <div class="item_grid item4">
+                                <a href="{{ image.image.url }}" title="{{ image.caption }}">
+                                    <div class="hover"></div>
+                                    <img src="{{ image.image.url }}" alt="img_preview"></a>
+                            </div>
+                    {% endfor %}
                         </div>
-                    </div>
                     <!--End List Grid Galeries img-->
                 </div>
             </div>
@@ -234,6 +219,7 @@
 
     <!--Load JS config application-->
     <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/messages_pl.js' %}"></script>
     <!--end JS config application-->
     {% block extra_js %} {% endblock %}
 {% endcompress %}

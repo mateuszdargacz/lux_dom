@@ -97,7 +97,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     normpath(join(SITE_ROOT, 'static')),
 )
-print STATICFILES_DIRS
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
@@ -141,6 +140,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',
+    'lux_dom.apps.core.context.models_context',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders

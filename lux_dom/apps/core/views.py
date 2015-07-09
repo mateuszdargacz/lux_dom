@@ -33,3 +33,6 @@ def contact(request):
     context = {}
     context.update(active='contact')
     return render(request, 'core/contact.html', context=context)
+
+
+

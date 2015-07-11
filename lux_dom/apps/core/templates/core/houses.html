@@ -35,15 +35,15 @@
                     <div id="myCarousel" class="carousel slide">
                         <ol class="carousel-indicators">
                             {% for image in house.images.all %}
-                            <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" {% if foorloop.first %}class="active"{% endif %}></li>
+                            <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
                             {% endfor %}
                         </ol>
                         <!-- Carousel items -->
                         <div class="carousel-inner carousel_full_images">
                             {% for image in house.images.all %}
-                            <div class="{% if foorloop.first %}active{% endif %}item">
+                            <div class="{% if forloop.first %}active{% endif %}item">
                                 <img src="{% static "images/dot.png" %}"
-                                     data-src="{% static "images/interior/5388055503_bdfec0a3d5.jpg" %}" alt="preview">
+                                     data-src="{{ image.image.url }}" alt="preview">
                                 <div class="carousel-caption">
                                     <h4>{{ image.caption }}</h4>
                                     <p>{{ image.description }}</p>

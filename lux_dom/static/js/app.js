@@ -10,6 +10,7 @@ $(window).load(function () {
     call_control_color_theme();
     call_lazy_load_images();
     call_form_validation();
+    handle_email_sent();
 });
 
 function call_form_validation() {
@@ -252,6 +253,13 @@ function call_lightbox() {
     }
 }
 
-if ($('.email_sent').length > 0) {
-    $('.email_sent').fadeOut()
+console.log($('#email_sent'));
+var handle_email_sent = function(){
+var sent = $('#email_sent');
+if (sent.length > 0) {
+    //$('#email_sent').stop().fadeOut(400, true);
+    sent.animate({"font-size": '54px'}, 1000, 'swing', function(){
+        sent.hide();
+    })
+}
 }

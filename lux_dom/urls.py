@@ -9,6 +9,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^', include('apps.core.urls', namespace="core")),
+    url(r'^zohoverify/verifyforzoho.html/?$', TemplateView.as_view(template_name='zoho.html'), name='gallery'),
     url(r'^admin/', include(admin.site.urls)),
 )
 

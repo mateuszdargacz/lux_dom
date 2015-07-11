@@ -14,6 +14,10 @@ class HouseType(models.Model):
     space = models.DecimalField(_('Metraż'), max_digits=6, decimal_places=2)
     price = models.DecimalField(_('Cena'), max_digits=10, decimal_places=2)
 
+    @property
+    def get_price(self):
+        return self.price
+
     def __unicode__(self):
         return self.name
 

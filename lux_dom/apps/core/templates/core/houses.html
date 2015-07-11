@@ -23,7 +23,7 @@
                             <li {% if house_type.pk == house.pk %}class="active"{% endif %}>
                                 <a href="{% url "core:houses"  house_type.pk %}">
                                     {{ house_type.name }} <br/>
-                                    <small>{{ house_type.space }} m<sup>2</sup> cena: {{ house_type.price }}</small>
+                                    <small>{{ house_type.space }} m<sup>2</sup> cena: {{ house_type.get_price }} zł</small>
                                 </a></li>
                         {% endfor %}
                     </ul>

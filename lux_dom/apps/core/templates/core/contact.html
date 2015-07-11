@@ -6,11 +6,10 @@
             <h1 class="no_margin logo"><strong>Luksusowe</strong>
                 <small>Osiedle</small>
             </h1>
-            <div class="row-fluid">
-                <div class="span8">
-                    <p class="no_margin"> Nasza galeria</p>
-                </div>
-            </div>
+            {% if email_sent %}
+            <h2 id="email_sent">Message has beed sent !</h2>
+            {% endif %}
+
         </div>
         <div class="inner-wrapper driver_space"></div>
     </section>
@@ -51,24 +50,25 @@
                             <!--Start Gmap statis-->
                             <iframe width="90%" height="400" frameborder="0" style="border:0"
                                     src="https://www.google.com/maps/embed/v1/place?q=Luzino%2C%20Poland&key=AIzaSyAVfFlHrlpz85YhPWsv0Y-7zRdJWj8wNos"></iframe>
-
-                            <h2><strong>Where</strong> we Are?</h2>
-
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley of type and scrambled it to make a type specimen book. It has
-                                survived not only five centuries, but also the leap into electronic typesetting.</p>
-                            <!--End Gmap statis-->
+{##}
+{#                            <h2><strong>Where</strong> we Are?</h2>#}
+{##}
+{#                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum#}
+{#                                has been the industry's standard dummy text ever since the 1500s, when an unknown#}
+{#                                printer took a galley of type and scrambled it to make a type specimen book. It has#}
+{#                                survived not only five centuries, but also the leap into electronic typesetting.</p>#}
+{#                            <!--End Gmap statis-->#}
                         </div>
                         <div class="span6">
                             <!--Start Contact Form-->
                             <h2>Zadzwoń pod numer: <br/>432234432 <br/> Lub wypełnij poniższy formularsz:</h2>
 
-                            <form class="lobstrer_form_validation">
+                            <form class="lobstrer_form_validation" method="post">
+                                {% csrf_token %}
                                 <label>Adres Email</label>
                                 <input type="email" class="input-block-level" name="email" required/>
                                 <label>Wiadomość</label>
-                                <textarea class="input-block-level" rows="5" required></textarea>
+                                <textarea  name="message" class="input-block-level" rows="5" required></textarea>
                                 <input type="submit" value="Send" class="btn btn-large flat btn-primary">
                             </form>
                             <!--End Contact Form-->

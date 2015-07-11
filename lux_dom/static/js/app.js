@@ -251,3 +251,7 @@ function call_lightbox() {
         });
     }
 }
+
+if ($('.email_sent').length > 0) {
+    $('.email_sent').fadeOut()
+}

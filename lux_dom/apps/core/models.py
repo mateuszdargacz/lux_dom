@@ -14,21 +14,33 @@ class HouseType(models.Model):
     space = models.DecimalField(_('Metraż'), max_digits=6, decimal_places=2)
     price = models.DecimalField(_('Cena'), max_digits=10, decimal_places=2)
 
+    def __unicode__(self):
+        return self.name
+
 
 class HouseDraft(models.Model):
     name = models.CharField(_('Nazwa'), max_length=128)
     desc = models.TextField(_('Opis'))
     house_type = models.ForeignKey('HouseType', verbose_name=_('Dom'))
 
+    def __unicode__(self):
+        return self.name
+
+
 class CImage(models.Model):
     caption = models.CharField(_('podpis zdjecia'), max_length=56)
     description = models.TextField(_('podpis zdjecia'))
     image = models.ImageField(_('Plik zdjęcia'), upload_to='pics/')
-    house_type = models.ForeignKey('HouseType', verbose_name=_('Dom'))
+    house_type = models.ForeignKey('HouseType', verbose_name=_('Dom'), related_name='images')
+
+    def __unicode__(self):
+        return self.caption
+
 
 class GalleryImage(models.Model):
     caption = models.CharField(_('podpis zdjecia'), max_length=56)
     description = models.TextField(_('podpis zdjecia'))
     image = models.ImageField(_('Plik zdjęcia'), upload_to='pics/')
 
-
+    def __unicode__(self):
+        return self.caption

@@ -10,7 +10,7 @@
             <ul class="unstyled">
 
                 <li {% if active == 'main' %}class="active"{% endif %}><a href="{% url 'core:main' %}">Strona Główna</a></li>
-                <li {% if active == 'houses' %}class="active"{% endif %}><a href="{% url 'core:houses' %}">o domach</a></li>
+                <li {% if active == 'houses' %}class="active"{% endif %}><a href="{% url 'core:houses' house_types.first.pk %}">o domach</a></li>
                 <li {% if active == 'hood' %}class="active"{% endif %}><a href="{% url 'core:hood' %}">O osiedlu</a></li>
                 <li {% if active == 'gallery' %}class="active"{% endif %}><a href="{% url 'core:gallery' %}">Galeria</a></li>
                 <li {% if active == 'contact' %}class="active"{% endif %}><a href="{% url 'core:contact' %}">Kontakt</a></li>

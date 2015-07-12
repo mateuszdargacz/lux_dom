@@ -195,7 +195,6 @@ DJANGO_APPS = (
 #3rd party apps
 THIRD_PARTY_APPS = (
     'vanilla',
-    'debug_toolbar',
     'compressor',
     'django_extensions',
 )
@@ -251,10 +250,19 @@ COMPRESS_PRECOMPILERS = (
     ('text/less', 'lessc {infile}'),
 )
 
+EMAIL_RECIPIENTS = ['mateuszdargacz@gmail.com']
+#email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+FROM_EMAIL = 'Luksusowe osiedle Luzino <pytania@luksusowedomyluzino.pl>'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'pytania@luksusowedomyluzino.pl'
+
 ########## WSGI CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = 'wsgi.application'
 ########## END WSGI CONFIGURATION
 
-
+LOCAL_SETTINGS = False
 

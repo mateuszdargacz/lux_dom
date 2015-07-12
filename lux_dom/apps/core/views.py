@@ -48,6 +48,6 @@ def contact(request):
         if message and email:
             subject = '[L D L] Pytanie'
             message = message + "\n\n EMAIL: %s" % email
-            send_mail(subject, message, settings.FROM_EMAIL, [settings.EMAIL_RECIPIENTS])
+            send_mail(subject, message, settings.FROM_EMAIL, settings.EMAIL_RECIPIENTS)
     context.update(email_sent=True)
     return render(request, 'core/contact.html', context=context)

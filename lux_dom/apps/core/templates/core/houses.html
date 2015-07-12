@@ -41,7 +41,7 @@
                         <!-- Carousel items -->
                         <div class="carousel-inner carousel_full_images">
                             {% for image in house.images.all %}
-                            <div class="{% if forloop.first %}active{% endif %}item">
+                            <div class="{% if forloop.first %}active {% endif %}item">
                                 <img src="{% static "images/dot.png" %}"
                                      data-src="{{ image.image.url }}" alt="preview">
                                 <div class="carousel-caption">

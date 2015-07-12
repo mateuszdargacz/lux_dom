@@ -36,7 +36,7 @@ class CImage(models.Model):
     description = models.TextField(_('podpis zdjecia'))
     image = models.ImageField(_('Plik zdjęcia'), upload_to='pics/')
     house_type = models.ForeignKey('HouseType', verbose_name=_('Dom'), related_name='images')
-    order = models.IntegerField(_('kolejnosc'), max_length=3)
+    corder = models.IntegerField(_('kolejnosc'), max_length=3)
 
     def __unicode__(self):
         return self.caption

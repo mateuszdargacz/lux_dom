@@ -9,5 +9,5 @@ from apps.core.models import HouseType, GalleryImage
 def models_context(request):
     return {
         'house_types': HouseType.objects.all(),
-        'gallery_images': GalleryImage.objects.all()
+        'gallery_images': GalleryImage.objects.all().order_by('order')
     }

@@ -45,6 +45,7 @@ class GalleryImage(models.Model):
     caption = models.CharField(_('podpis zdjecia'), max_length=56)
     description = models.TextField(_('podpis zdjecia'))
     image = models.ImageField(_('Plik zdjęcia'), upload_to='pics/')
+    order = models.IntegerField(_('kolejnosc'), max_length=3)
 
     def __unicode__(self):
         return self.caption

@@ -6,7 +6,7 @@ __git__ = 'https://github.com/mateuszdargacz'
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-# TOOD INSTALL PILLOW
+
 class HouseType(models.Model):
     name = models.CharField(_('Nazwa'), max_length=56)
     description = models.TextField(_('Opis'))
@@ -36,17 +36,25 @@ class CImage(models.Model):
     description = models.TextField(_('podpis zdjecia'))
     image = models.ImageField(_('Plik zdjęcia'), upload_to='pics/')
     house_type = models.ForeignKey('HouseType', verbose_name=_('Dom'), related_name='images')
-    corder = models.IntegerField(_('kolejnosc'), max_length=3)
+    corder = models.IntegerField(_('kolejnosc'), blank=True, null=True)
 
     def __unicode__(self):
         return self.caption
+
+
+ETAP_CHOICES = (
+    ('etap1', 'Prace ziemne i fundamenty.'),
+    ('etap2', 'Wykonanie gabarytów domu'),
+    ('etap3', 'Wykończenia')
+)
 
 
 class GalleryImage(models.Model):
     caption = models.CharField(_('podpis zdjecia'), max_length=56)
     description = models.TextField(_('podpis zdjecia'))
     image = models.ImageField(_('Plik zdjęcia'), upload_to='pics/')
-    order = models.IntegerField(_('kolejnosc'), max_length=3)
+    order = models.IntegerField(_('kolejnosc'), blank=True, null=True)
+    etap = models.CharField(max_length=20, blank=True, null=True, choices=ETAP_CHOICES)
 
     def __unicode__(self):
         return self.caption

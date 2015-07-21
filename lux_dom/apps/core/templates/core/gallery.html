@@ -2,36 +2,47 @@
 {% load static %}
 
 {% block content %}
-<section id="logo_message_area">
-    <div class="inner-wrapper">
-        <h1 class="no_margin logo"><strong>Luksusowe</strong>
-            <small>Osiedle</small>
-        </h1>
-    </div>
-    <div class="inner-wrapper driver_space"></div>
-</section>
-<section id="content">
-    <div class="inner-wrapper">
-        <div class="row-fluid">
-            <div class="span12">
-                <!-- Start Grid Galeries -->
-                <div class="gridmasonry grid_list_galeries">
-                    {% for image in gallery_images %}
-                        <div class="item_grid item3">
-                            <a href="{{ image.image.url }}" class="image_link">
-                                <div class="panel">
-                                    <h2>{{ image.caption }}</h2>
-
-                                    <div class="with_hover"></div>
-                                    <img src="{{ image.image.url }}" alt="preview"/>
-                                </div>
-                            </a>
-                        </div>
-                    {% endfor %}
+    <section id="logo_message_area">
+        <div class="inner-wrapper">
+            <h1 class="no_margin logo"><strong>Luksusowe</strong>
+                <small>Osiedle</small>
+            </h1>
+        </div>
+        <div class="inner-wrapper driver_space"></div>
+    </section>
+    <section id="content">
+        <div class="inner-wrapper">
+            <div class="row-fluid">
+                <div class="span3">
+                    <ul class="unstyled aaa link_acomodation">
+                        {% for etap in etaps %}
+                            <li {% if etap.0 == active_etap %}class="active"{% endif %}>
+                                <a href="{% url "core:gallery" etap.0 %}">
+                                    {{ etap.1 }} <br/>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
                 </div>
-                <!-- End Grid Galeries -->
+                <div class="span9">
+                    <!-- Start Grid Galeries -->
+                    <div class="gridmasonry grid_list_galeries">
+                        {% for image in images %}
+                            <div class="item_grid item3">
+                                <a href="{{ image.image.url }}" class="image_link">
+                                    <div class="panel">
+                                        <h2>{{ image.caption }}</h2>
+
+                                        <div class="with_hover"></div>
+                                        <img src="{{ image.image.url }}" alt="preview"/>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <!-- End Grid Galeries -->
+                </div>
             </div>
         </div>
-    </div>
-</section><!-- End section logo message area -->
+    </section><!-- End section logo message area -->
 {% endblock %}

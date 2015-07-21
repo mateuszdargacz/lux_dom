@@ -6,7 +6,7 @@ __author__ = 'mateusz'
 __date__ = '13.11.14 / 08:59'
 __git__ = 'https://github.com/mateuszdargacz'
 from django.shortcuts import render, get_object_or_404
-from apps.core.models import HouseType
+from apps.core.models import HouseType, GalleryImage, ETAP_CHOICES
 
 
 def main(request):
@@ -33,9 +33,17 @@ def hood(request):
     return render(request, 'core/hood.html', context=context)
 
 
-def gallery(request):
+def gallery(request, etap):
+    if not etap:
+        etap = ETAP_CHOICES[0][0]
     context = {}
-    context.update(active='gallery')
+    images = GalleryImage.objects.filter(etap=etap).order_by('order')
+    if not images:
+        images = GalleryImage.objects.filter(etap='etap1').order_by('order') or GalleryImage.objects.all().order_by(
+            'order')[:16]
+    else:
+        context.update(etap=True)
+    context.update(active='gallery', images=images, etaps=ETAP_CHOICES, active_etap=etap)
     return render(request, 'core/gallery.html', context=context)
 
 

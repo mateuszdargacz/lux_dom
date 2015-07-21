@@ -23,7 +23,7 @@
                             <li {% if house_type.pk == house.pk %}class="active"{% endif %}>
                                 <a href="{% url "core:houses"  house_type.pk %}">
                                     {{ house_type.name }} <br/>
-                                    <small>{{ house_type.space }} m<sup>2</sup> cena: {{ house_type.get_price }} zł</small>
+                                    <small>{{ house_type.space }} m<sup>2</sup> cena: {{ house_type.get_price }} zł/m<sup>2</sup></small>
                                 </a></li>
                         {% endfor %}
                     </ul>
@@ -55,13 +55,13 @@
                         <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
                         <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
                     </div>
-                    <div class="divater">
-                        <div class="line"></div>
-                        <span><img src="{% static "images/deviter.png" %}" alt=""></span></div>
-                    <h2>Informacje</h2>
-                    <div class="house_description">
-                        {{ house.description }}
-                    </div>
+{#                    <div class="divater">#}
+{#                        <div class="line"></div>#}
+{#                        <span><img src="{% static "images/deviter.png" %}" alt=""></span></div>#}
+{#                    <h2>Informacje</h2>#}
+{#                    <div class="house_description">#}
+{#                        {{ house.description }}#}
+{#                    </div>#}
 
                 </div>
             </div>

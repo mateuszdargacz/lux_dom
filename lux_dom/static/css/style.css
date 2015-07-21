@@ -1887,3 +1887,7 @@ select {
     text-align: left;
   }
 }
+.aaa li a:after {
+  border-top: 20px solid transparent!important;
+  border-bottom: 20px solid!important;
+}

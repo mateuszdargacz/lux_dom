@@ -12,7 +12,7 @@ urlpatterns = patterns('apps.core.views',
     url(r'^/?$', 'main', name='main'),
     url(r'^hood/?$', 'hood', name='hood'),
     url(r'^houses/(?P<pk>\d+)/?$', 'houses', name='houses'),
-    url(r'^gallery/?$', 'gallery', name='gallery'),
+    url(r'^gallery/(?P<etap>.+)?/?$', 'gallery', name='gallery'),
     url(r'^contact/?$', 'contact', name='contact'),
 )
 

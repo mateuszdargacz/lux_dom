@@ -43,9 +43,12 @@ class CImage(models.Model):
 
 
 ETAP_CHOICES = (
-    ('etap1', 'Prace ziemne i fundamenty.'),
-    ('etap2', 'Wykonanie gabarytów domu'),
-    ('etap3', 'Wykończenia')
+    ('etap1', u'Prace ziemne i fundamenty.'),
+    ('etap2', u'Wykonanie gabarytów domu'),
+    ('etap3', u'Instalacje'),
+    ('etap4', u'Wykończenie wnętrza'),
+    ('etap5', u'Wykończenie zewnątrz'),
+    ('etap6', u'Osiedle i okolice'),
 )
 
 

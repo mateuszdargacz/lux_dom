@@ -139,16 +139,22 @@ function call_datatables() {
             ],
             "aaSortingFixed": [[0, 'asc']],
             "aaSorting": [[1, 'asc']],
-            "sDom": 'lfr<"giveHeight"t>ip',
-            "sPaginationType": "full_numbers",
+            "sDom": 'r<"giveHeight"t>',
+            bPaginate: false,
+            info: false,
             "aoColumns": [
                 {
                     "sWidth": "10%"
                 }, {
-                    "sWidth": "45%"
+                    "sWidth": "10%"
                 }, {
-                    "sWidth": "45%"
-                },]
+                    "sWidth": "30%"
+                }, {
+                    "sWidth": "30%"
+                }, {
+                    "sWidth": "30%"
+                }
+            ]
         });
     }
 }

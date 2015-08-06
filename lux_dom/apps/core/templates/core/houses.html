@@ -21,9 +21,10 @@
                     <ul class="unstyled link_acomodation">
                         {% for house_type in house_types %}
                             <li {% if house_type.pk == house.pk %}class="active"{% endif %}>
-                                <a href="{% url "core:houses"  house_type.pk %}">
+                                <a href="{% url "core:houses" house_type.pk %}">
                                     {{ house_type.name }} <br/>
-                                    <small>{{ house_type.space }} m<sup>2</sup> cena: {{ house_type.get_price }} zł/m<sup>2</sup></small>
+                                    <small>{{ house_type.space }} m<sup>2</sup> cena: {{ house_type.get_price }}
+                                        zł/m<sup>2</sup></small>
                                 </a></li>
                         {% endfor %}
                     </ul>
@@ -35,34 +36,439 @@
                     <div id="myCarousel" class="carousel slide">
                         <ol class="carousel-indicators">
                             {% for image in house.images.all %}
-                            <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+                                <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}"
+                                    {% if forloop.first %}class="active"{% endif %}></li>
                             {% endfor %}
                         </ol>
                         <!-- Carousel items -->
                         <div class="carousel-inner carousel_full_images">
                             {% for image in house.images.all %}
-                            <div class="{% if forloop.first %}active {% endif %}item">
-                                <img src="{% static "images/dot.png" %}"
-                                     data-src="{{ image.image.url }}" alt="preview">
-                                <div class="carousel-caption">
-                                    <h4><a href="{{ image.image.url }}" download="{{ image.image.url }}" target="_blank">{{ image.caption }} (kliknij aby pobrać w orginalnym rozmiarze)</a></h4>
-                                    <p>{{ image.description }}</p>
+                                <div class="{% if forloop.first %}active {% endif %}item">
+                                    <img src="{% static "images/dot.png" %}"
+                                         data-src="{{ image.image.url }}" alt="preview">
+
+                                    <div class="carousel-caption">
+                                        <h4><a href="{{ image.image.url }}" download="{{ image.image.url }}"
+                                               target="_blank">{{ image.caption }} (kliknij aby pobrać w orginalnym
+                                            rozmiarze)</a></h4>
+
+                                        <p>{{ image.description }}</p>
+                                    </div>
                                 </div>
-                            </div>
                             {% endfor %}
                         </div>
                         <!-- Carousel nav -->
                         <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
                         <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
                     </div>
-{#                    <div class="divater">#}
-{#                        <div class="line"></div>#}
-{#                        <span><img src="{% static "images/deviter.png" %}" alt=""></span></div>#}
-{#                    <h2>Informacje</h2>#}
-{#                    <div class="house_description">#}
-{#                        {{ house.description }}#}
-{#                    </div>#}
 
+                    <div class="divater">
+                        <div class="line"></div>
+                        <span><img src="{% static "images/deviter.png" %}" alt=""></span>
+                    </div>
+                    {% if house.pk == 1 %}
+
+                        <table class="display datatables_group">
+                            <thead>
+                            <tr>
+                                <td>Header</td>
+                                <td>Nr pom.</td>
+                                <td>Nazwa pom.</td>
+                                <td>Typ posadzki</td>
+                                <td>Pow m<sup>2</sup></td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Parter</td>
+                                <td>01</td>
+                                <td>Wiatrołap</td>
+                                <td>Gres</td>
+                                <td>3,32</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>02</td>
+                                <td>Korytarz</td>
+                                <td>Panele</td>
+                                <td>6,39</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>03</td>
+                                <td>Kuchnia</td>
+                                <td>Gres</td>
+                                <td>8,75</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>04</td>
+                                <td>spiżarka</td>
+                                <td>Gres</td>
+                                <td>1,50</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>05</td>
+                                <td>WC</td>
+                                <td>Gres</td>
+                                <td>1,77</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>06</td>
+                                <td>Salon</td>
+                                <td>Panele</td>
+                                <td>31,36</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>07</td>
+                                <td>Gabinet</td>
+                                <td>Gres</td>
+                                <td>7,87</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>08</td>
+                                <td>Klatka schodowa</td>
+                                <td>Panele</td>
+                                <td>5,95</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>09</td>
+                                <td>Kotłownia</td>
+                                <td>Gres</td>
+                                <td>4,00</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>10</td>
+                                <td>Garaż</td>
+                                <td>Szlichta cementowa</td>
+                                <td>18,04</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>01</td>
+                                <td>Korytarz</td>
+                                <td>Panele</td>
+                                <td>6,21</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>02</td>
+                                <td>Garderoba</td>
+                                <td>Panele</td>
+                                <td>6,23</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>03</td>
+                                <td>Pokój</td>
+                                <td>Panele</td>
+                                <td>14,81</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>04</td>
+                                <td>Pokój</td>
+                                <td>Panele</td>
+                                <td>13,28</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>05</td>
+                                <td>Łazienka</td>
+                                <td>Gres</td>
+                                <td>10,00</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>06</td>
+                                <td>Sypialnia</td>
+                                <td>Panele</td>
+                                <td>22,12</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>07</td>
+                                <td>Pokój</td>
+                                <td>Panele</td>
+                                <td>10,20</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    {% elif house.pk == 2 %}
+                        <table class="display datatables_group">
+                            <thead>
+                            <tr>
+                                <td>Header</td>
+                                <td>Nr pom.</td>
+                                <td>Nazwa pom.</td>
+                                <td>Typ posadzki</td>
+                                <td>Pow m<sup>2</sup></td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Parter</td>
+                                <td>01</td>
+                                <td>Wiatrołap</td>
+                                <td>Gres</td>
+                                <td>4,44</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>02</td>
+                                <td>Komunikacja</td>
+                                <td>Panele</td>
+                                <td>12,59</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>03</td>
+                                <td>Kuchnia</td>
+                                <td>Gres</td>
+                                <td>10,88</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>04</td>
+                                <td>Spiżarka</td>
+                                <td>Gres</td>
+                                <td>2,10</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>05</td>
+                                <td>WC</td>
+                                <td>Gres</td>
+                                <td>1,79</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>06</td>
+                                <td>Salon</td>
+                                <td>Panele</td>
+                                <td>22,14</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>07</td>
+                                <td>Gabinet</td>
+                                <td>Gres</td>
+                                <td>7,31</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>08</td>
+                                <td>Klatka schodowa</td>
+                                <td>Panele</td>
+                                <td>5,92</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>09</td>
+                                <td>Kotłownia</td>
+                                <td>Gres</td>
+                                <td>5,58</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>10</td>
+                                <td>Garaż</td>
+                                <td>Szlichta cementowa</td>
+                                <td>17,54</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>01</td>
+                                <td>Korytarz</td>
+                                <td>Panele</td>
+                                <td>8,78</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>02</td>
+                                <td>Garderoba</td>
+                                <td>Panele</td>
+                                <td>5,49</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>03</td>
+                                <td>Sypialniaj</td>
+                                <td>Panele</td>
+                                <td>14,35</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>04</td>
+                                <td>Sypialnia</td>
+                                <td>Panele</td>
+                                <td>16,57</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>05</td>
+                                <td>Łazienka</td>
+                                <td>Gres</td>
+                                <td>8,82</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>06</td>
+                                <td>Sypialnia</td>
+                                <td>Panele</td>
+                                <td>17,62</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>07</td>
+                                <td>Pokój</td>
+                                <td>Panele</td>
+                                <td>11,95</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    {% elif house.pk == 3 %}
+                        <table class="display datatables_group">
+                            <thead>
+                            <tr>
+                                <td>Header</td>
+                                <td>Nr pom.</td>
+                                <td>Nazwa pom.</td>
+                                <td>Typ posadzki</td>
+                                <td>Pow m<sup>2</sup></td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Parter</td>
+                                <td>01</td>
+                                <td>Wiatrołap</td>
+                                <td>Gres</td>
+                                <td>3,96</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>02</td>
+                                <td>Korytarz</td>
+                                <td>Panele</td>
+                                <td>7,61</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>03</td>
+                                <td>Kuchnia</td>
+                                <td>Gres</td>
+                                <td>8,87</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>04</td>
+                                <td>spiżarka</td>
+                                <td>Gres</td>
+                                <td>1,28</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>05</td>
+                                <td>WC</td>
+                                <td>Gres</td>
+                                <td>1,78</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>06</td>
+                                <td>Salon</td>
+                                <td>Panele</td>
+                                <td>28,39</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>07</td>
+                                <td>Gabinet</td>
+                                <td>Gres</td>
+                                <td>8,30</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>08</td>
+                                <td>Klatka schodowa</td>
+                                <td>Panele</td>
+                                <td>5,92</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>09</td>
+                                <td>Kotłownia</td>
+                                <td>Gres</td>
+                                <td>5,58</td>
+                            </tr>
+                            <tr>
+                                <td>Parter</td>
+                                <td>10</td>
+                                <td>Garaż</td>
+                                <td>Szlichta cementowa</td>
+                                <td>18,04</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>01</td>
+                                <td>Korytarz</td>
+                                <td>Panele</td>
+                                <td>7,22</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>02</td>
+                                <td>Garderoba</td>
+                                <td>Panele</td>
+                                <td>5,53</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>03</td>
+                                <td>Pokój</td>
+                                <td>Panele</td>
+                                <td>15,34</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>04</td>
+                                <td>Pokój</td>
+                                <td>Panele</td>
+                                <td>15,13</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>05</td>
+                                <td>Łazienka</td>
+                                <td>Gres</td>
+                                <td>9,90</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>06</td>
+                                <td>Sypialnia</td>
+                                <td>Panele</td>
+                                <td>20,05</td>
+                            </tr>
+                            <tr>
+                                <td>Piętro</td>
+                                <td>07</td>
+                                <td>Pokój</td>
+                                <td>Panele</td>
+                                <td>9,81</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    {% endif %}
                 </div>
             </div>
         </div>

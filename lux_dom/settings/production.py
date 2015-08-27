@@ -11,6 +11,11 @@ from django.conf import settings
 # into your settings, but ImproperlyConfigured is an exception.
 from django.core.exceptions import ImproperlyConfigured
 
+EMAIL_HOST_USER = 'luksusowedomyluzino@gmail.com' 
+try:
+    from local_settings import * 
+except ImportError:
+    pass
 
 def get_env_setting(setting):
     """ Get the environment setting or return exception """
@@ -26,15 +31,6 @@ ALLOWED_HOSTS = ['*']
 ########## END HOST CONFIGURATION
 
 ########## EMAIL CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-host
-EMAIL_HOST = environ.get('EMAIL_HOST', 'smtp.gmail.com')
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
-EMAIL_SUBJECT_PREFIX = '[%s] ' % SITE_NAME
-
 SERVER_EMAIL = EMAIL_HOST_USER
 ########## END EMAIL CONFIGURATION
 
@@ -62,7 +58,3 @@ DEBUG = True
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = '91162629d258a876ee994e9233b2ad87'
 ########## END SECRET CONFIGURATION
-try:
-    from local_settings import *
-except ImportError:
-    pass

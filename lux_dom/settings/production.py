@@ -75,3 +75,7 @@ DATABASES = {
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = '91162629d258a876ee994e9233b2ad87'
 ########## END SECRET CONFIGURATION
+try:
+    from local_settings import *
+except ImportError:
+    pass

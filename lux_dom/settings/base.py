@@ -253,12 +253,8 @@ COMPRESS_PRECOMPILERS = (
 EMAIL_RECIPIENTS = ['mateuszdargacz@gmail.com']
 #email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-FROM_EMAIL = 'Luksusowe osiedle Luzino <email@luksusowedomyluzino.pl>'
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.zoho.com'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = 'email@luksusowedomyluzino.pl'
-EMAIL_HOST_PASSWORD = 'luksusowedomyluzino#321'
+FROM_EMAIL = 'Luksusowe osiedle Luzino <luksusowedomyluzino@gmail.com>'
+
 ########## WSGI CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = 'wsgi.application'

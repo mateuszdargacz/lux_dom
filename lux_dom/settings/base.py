@@ -250,7 +250,7 @@ COMPRESS_PRECOMPILERS = (
     ('text/less', 'lessc {infile}'),
 )
 
-EMAIL_RECIPIENTS = ['mateuszdargacz@gmail.com']
+EMAIL_RECIPIENTS = ['mateuszdargacz@gmail.com',  'mt.quercus@op.pl']
 #email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 FROM_EMAIL = 'Luksusowe osiedle Luzino <luksusowedomyluzino@gmail.com>'

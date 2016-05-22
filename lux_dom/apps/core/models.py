@@ -61,3 +61,9 @@ class GalleryImage(models.Model):
 
     def __unicode__(self):
         return self.caption
+
+
+class Message(models.Model):
+    email = models.CharField(_('Email'), max_length=128)
+    message = models.TextField(_('Wiadomość'))
+    d_created = models.DateTimeField(_('Odebrano'), auto_now=True)

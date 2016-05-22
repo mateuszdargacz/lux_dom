@@ -6,7 +6,7 @@ __author__ = 'mateusz'
 __date__ = '13.11.14 / 08:59'
 __git__ = 'https://github.com/mateuszdargacz'
 from django.shortcuts import render, get_object_or_404
-from apps.core.models import HouseType, GalleryImage, ETAP_CHOICES
+from apps.core.models import HouseType, GalleryImage, ETAP_CHOICES, Message
 
 
 def main(request):
@@ -53,9 +53,14 @@ def contact(request):
     if request.method == "POST":
         email = request.POST.get('email')
         message = request.POST.get('message')
+        Message.objects.create(email=email, message=message)
         if message and email:
             subject = '[L D L] Pytanie'
             message = message + "\n\n EMAIL: %s" % email
             send_mail(subject, message, settings.FROM_EMAIL, settings.EMAIL_RECIPIENTS)
         context.update(email_sent=True)
     return render(request, 'core/contact.html', context=context)
+
+
+
+

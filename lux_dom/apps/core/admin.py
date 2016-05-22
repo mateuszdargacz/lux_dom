@@ -15,5 +15,7 @@ admin.site.register(GalleryImage)
 class MessageAdmin(admin.ModelAdmin):
     fields = ('email', 'message', 'd_created')
     readonly_fields = ('d_created',)
+    list_display = ('email', 'd_created')
+
 
 admin.site.register(Message, MessageAdmin)
